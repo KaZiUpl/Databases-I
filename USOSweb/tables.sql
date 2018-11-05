@@ -2,6 +2,9 @@ DROP TABLE studenci;
 DROP TABLE zaliczenia;
 DROP TABLE grupy;
 DROP TABLE przedmioty;
+DROP TABLE pracownicy;
+DROP TABLE semestry;
+DROP TABLE kierunki;
 
 CREATE TABLE studenci
 (
