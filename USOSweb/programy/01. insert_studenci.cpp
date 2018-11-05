@@ -1,11 +1,15 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<ctime>
+#include<cstdlib>
 using namespace std;
 
 
 int main()
 {
+    srand(time(NULL));
+
     ifstream input("studenci.txt");
     ofstream output("inserty_studenci.txt");
 
@@ -15,7 +19,7 @@ int main()
     while(!input.eof())
     {
         input>>imie>>nazwisko;
-        output<<"INSERT INTO studenci VALUES("<<counter++<<",'"<<imie<<"','"<<nazwisko<<"');"<<endl;
+        output<<"INSERT INTO studenci VALUES("<<counter++<<",'"<<imie<<"','"<<nazwisko<<"',"<<rand()%7+1<<");"<<endl;
     }
 
 

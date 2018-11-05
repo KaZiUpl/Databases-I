@@ -7,7 +7,8 @@ CREATE TABLE studenci
 (
     id_studenta INT PRIMARY KEY,
     imie VARCHAR(32),
-    nazwisko VARCHAR(32)
+    nazwisko VARCHAR(32),
+    numer_semestru INT
 );
 
 CREATE TABLE grupy
