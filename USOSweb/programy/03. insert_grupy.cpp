@@ -9,7 +9,7 @@ int main()
 
     int counter = 1;
     char litera = 'A';
-    for(int id_przedmiotu=1;id_przedmiotu<=8;id_przedmiotu++)
+    for(int id_przedmiotu=1;id_przedmiotu<=16;id_przedmiotu++)
     {
         litera = 'A';
         for(int j=0;j<3;j++)
