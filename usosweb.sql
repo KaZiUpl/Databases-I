@@ -1,7 +1,7 @@
-siemanko
 DROP TABLE studenci;
 DROP TABLE zaliczenia;
 DROP TABLE grupy;
+DROP TABLE przedmioty;
 
 CREATE TABLE studenci
 (
