@@ -1,0 +1,24 @@
+Analiza matematyczna II
+ocena
+64
+Bazy danych
+ocena
+63
+Geopolityka Afryki
+zal
+55
+Systemy operacyjne
+ocena
+45
+Programowanie II
+ocena
+50
+Sieci komputerowe
+ocena
+60
+Wychowanie fizyczne
+ocena
+60
+Matematyka dyskretna
+ocena
+60
