@@ -49,6 +49,7 @@ CREATE TABLE semestry
 	id_grupy INT,
 	id_przedmiotu INT,
 	id_studenta INT
+	id_kierunku INT
 );
 
 CREATE TABLE kierunki
