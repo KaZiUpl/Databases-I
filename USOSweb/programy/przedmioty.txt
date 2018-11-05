@@ -1,48 +1,64 @@
 Analiza matematyczna II
 ocena
 64
+3
 Bazy danych
 ocena
 63
+3
 Geopolityka Afryki
 zal
 55
+4
 Systemy operacyjne
 ocena
 45
+2
 Programowanie II
 ocena
 50
+6
 Sieci komputerowe
 ocena
 60
+5
 Wychowanie fizyczne
 zal
 60
+5
 Matematyka dyskretna
 ocena
 60
+2
 Analiza matematyczna I
 ocena
 60
+2
 Repetytorium z matematyki
 zal
 45
+1
 Angielski
 ocena
 60
+6
 Niemiecki
 ocena
 60
+7
 Programowanie I
 ocena
 45
+4
 Podstawy programowania
 ocena
 30
+1
 Sieci neuronowe
 zal
 30
+7
 Algebra liniowa
 ocena
 60
+1
