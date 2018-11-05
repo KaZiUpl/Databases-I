@@ -13,8 +13,8 @@ CREATE TABLE studenci
 CREATE TABLE grupy
 (
     id_grupy INT PRIMARY KEY,
-    numer INT,
-    przedmiot VARCHAR(255)
+    numer VARCHAR(2),
+    id_przedmiotu INT
 );
 
 CREATE TABLE zaliczenia
