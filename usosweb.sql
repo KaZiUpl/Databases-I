@@ -1,3 +1,7 @@
+DROP TABLE studenci;
+DROP TABLE zaliczenia;
+DROP TABLE grupy;
+
 CREATE TABLE studenci
 (
     id_studenta INT PRIMARY KEY,
