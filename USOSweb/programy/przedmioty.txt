@@ -22,3 +22,27 @@ zal
 Matematyka dyskretna
 ocena
 60
+Analiza matematyczna I
+ocena
+60
+Repetytorium z matematyki
+zal
+45
+Angielski
+ocena
+60
+Niemiecki
+ocena
+60
+Programowanie I
+ocena
+45
+Podstawy programowania
+ocena
+30
+Sieci neuronowe
+zal
+30
+Algebra liniowa
+ocena
+60
