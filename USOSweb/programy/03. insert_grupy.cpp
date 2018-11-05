@@ -1,6 +1,8 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<ctime>
+#include<cstdlib>
 using namespace std;
 
 int main()
@@ -14,7 +16,7 @@ int main()
         litera = 'A';
         for(int j=0;j<3;j++)
         {
-            output<<"INSERT INTO grupy VALUES("<<counter++<<",'"<<litera++<<"',"<<id_przedmiotu<<");"<<endl;
+            output<<"INSERT INTO grupy VALUES("<<counter++<<", '"<<litera++<<"', "<<id_przedmiotu<<", "<<rand()%20+1<<");"<<endl;
         }
     }
 
