@@ -8,7 +8,6 @@ using namespace std;
 
 int main()
 {
-    srand(time(NULL));
 
     ifstream input("studenci.txt");
     ofstream output("inserty_studenci.txt");
@@ -16,9 +15,8 @@ int main()
     string imie, nazwisko;
     int counter = 1;
 
-    while(!input.eof())
+    while(input>>imie>>nazwisko)
     {
-        input>>imie>>nazwisko;
         output<<"INSERT INTO studenci VALUES("<<counter++<<",'"<<imie<<"','"<<nazwisko<<"',"<<rand()%7+1<<");"<<endl;
     }
 

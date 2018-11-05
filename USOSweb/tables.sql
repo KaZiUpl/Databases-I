@@ -32,13 +32,13 @@ CREATE TABLE przedmioty
     id_przedmiotu INT PRIMARY KEY,
     nazwa VARCHAR(255),
     typ_zaliczenia VARCHAR(50),
-    wymiar_godzin INT
+    wymiar_godzin INT,
+    id_kierunku INT
 );
 
 CREATE TABLE pracownicy
 (
 	id_pracownika INT PRIMARY KEY,
-    id_grupy INT,
 	imie VARCHAR(32),
 	nazwisko VARCHAR(32),
 	typ_pracownika VARCHAR(32),
