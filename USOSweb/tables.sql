@@ -48,8 +48,7 @@ CREATE TABLE semestry
 	id_semestru INT PRIMARY KEY,
 	id_grupy INT,
 	id_przedmiotu INT,
-	id_studenta INT,
-	nr_semestru INT
+	id_studenta INT
 );
 
 CREATE TABLE kierunki
