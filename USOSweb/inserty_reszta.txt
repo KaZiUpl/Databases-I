@@ -1,0 +1,9 @@
+INSERT INTO kierunki VALUES(1,'Informatyka stosowana','Wydział Matematyki i Informatyki');
+
+INSERT INTO semestry VALUES(1,1);
+INSERT INTO semestry VALUES(2,1);
+INSERT INTO semestry VALUES(3,1);
+INSERT INTO semestry VALUES(4,1);
+INSERT INTO semestry VALUES(5,1);
+INSERT INTO semestry VALUES(6,1);
+INSERT INTO semestry VALUES(7,1);

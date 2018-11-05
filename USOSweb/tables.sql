@@ -8,14 +8,15 @@ CREATE TABLE studenci
     id_studenta INT PRIMARY KEY,
     imie VARCHAR(32),
     nazwisko VARCHAR(32),
-    numer_semestru INT
+    id_semestru INT
 );
 
 CREATE TABLE grupy
 (
     id_grupy INT PRIMARY KEY,
     numer VARCHAR(2),
-    id_przedmiotu INT
+    id_przedmiotu INT,
+    id_pracownika INT
 );
 
 CREATE TABLE zaliczenia
@@ -47,17 +48,12 @@ CREATE TABLE pracownicy
 CREATE TABLE semestry
 (
 	id_semestru INT PRIMARY KEY,
-	id_grupy INT,
-	id_przedmiotu INT,
-	id_studenta INT
 	id_kierunku INT
 );
 
 CREATE TABLE kierunki
 (
 	id_kierunku INT PRIMARY KEY,
-	id_semestru INT,
-	id_przedmiotu INT,
 	nazwa VARCHAR(100),
 	wydział VARCHAR(100)
 );
