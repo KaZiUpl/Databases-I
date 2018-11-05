@@ -134,25 +134,3 @@ INSERT INTO studenci VALUES(97,'Jakub','Pietrzak');
 INSERT INTO studenci VALUES(98,'Danuta','Piotrowska');
 INSERT INTO studenci VALUES(99,'Sebastian','Chmielewski');
 INSERT INTO studenci VALUES(100,'Adam','Andrzejewski');
-
-
-INSERT INTO PRZEDMIOTY VALUES ('1', 'Algebra liniowa z geometria analityczna', 'ocena', '500')
-INSERT INTO PRZEDMIOTY VALUES ('2', 'Analiza matematyczna I', 'ocena', '120')
-INSERT INTO PRZEDMIOTY VALUES ('3', 'Srodowiska obliczen symbolicznych', 'zaliczenie', '60')
-INSERT INTO PRZEDMIOTY VALUES ('4', 'Algorytmy i struktury danych', 'ocena', '60')
-
-
-select przedmioty.nazwa, przedmioty.typ_zaliczenia, grupy.id
-from przedmioty, grupy
-where grupy.przedmiot = przedmioty.id; 
-
-
-select stud.id, stud.imie, stud.nazwisko, zal.ocena, gr.id
-from studenci stud 	join zaliczenia zal on (stud.id = zal.id_studenta)
-                    join grupy gr on (gr.id = zal.id_grupy)
-order by stud.id;
-
-
-
-
-
