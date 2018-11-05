@@ -17,7 +17,7 @@ int main()
 
     while(input>>imie>>nazwisko)
     {
-        output<<"INSERT INTO studenci VALUES("<<counter++<<",'"<<imie<<"','"<<nazwisko<<"',"<<rand()%7+1<<");"<<endl;
+        output<<"INSERT INTO studenci VALUES("<<counter++<<", '"<<imie<<"', '"<<nazwisko<<"', "<<rand()%7+1<<");"<<endl;
     }
 
 
