@@ -1,3 +1,4 @@
+siemanko
 DROP TABLE studenci;
 DROP TABLE zaliczenia;
 DROP TABLE grupy;
