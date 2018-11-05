@@ -22,8 +22,7 @@ int main()
         getline(input,wymiar_godzin_str);
         wymiar_godzin_int = strtol(wymiar_godzin_str.c_str(),NULL,10);
 
-
-        output<<"INSERT INTO przedmioty VALUES("<<counter++<<",'"<<nazwa_przedmiotu<<"','"<<typ_zaliczenia<<"',"<<wymiar_godzin_int<<");"<<endl;
+        if(nazwa_przedmiotu.size()>0) output<<"INSERT INTO przedmioty VALUES("<<counter++<<",'"<<nazwa_przedmiotu<<"','"<<typ_zaliczenia<<"',"<<wymiar_godzin_int<<");"<<endl;
     }
 
 
