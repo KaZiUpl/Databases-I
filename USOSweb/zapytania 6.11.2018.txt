@@ -1,0 +1,7 @@
+imie, nazwisko, numer gupy ludzi będących na Bazach danych:
+select stud.imie, stud.nazwisko, gr.numer
+from  studenci stud inner join zaliczenia zal on (stud.id_studenta = zal.id_studenta)
+                    inner join grupy gr on (zal.id_grupy = gr.id_grupy) 
+                    inner join przedmioty prz on (gr.id_przedmiotu = prz.id_przedmiotu)
+where   prz.nazwa like 'Bazy danych';
+
