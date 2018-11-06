@@ -1,3 +1,4 @@
+ZADANIE 1
 imie, nazwisko, numer gupy ludzi będących na Bazach danych:
 select stud.imie, stud.nazwisko, gr.numer
 from  studenci stud inner join zaliczenia zal on (stud.id_studenta = zal.id_studenta)
@@ -5,3 +6,21 @@ from  studenci stud inner join zaliczenia zal on (stud.id_studenta = zal.id_stud
                     inner join przedmioty prz on (gr.id_przedmiotu = prz.id_przedmiotu)
 where   prz.nazwa like 'Bazy danych';
 
+------------------ imie studenta o id 47 na Jan
+
+ZADANIE 2
+wyswietl imie, nazwisko i grupye ludzi, ktorzy studuiuja z Janem Kowalskim (id_studenta = 47):
+- wersja z podzapytaniem:
+select stud.imie, stud.nazwisko, gr.numer, gr.id_grupy
+from studenci stud inner join zaliczenia zal on (stud.id_studenta = zal.id_studenta)
+                    inner join grupy gr on (zal.id_grupy = gr.id_grupy)
+where gr.id_grupy in 
+                    (
+                    select gr.id_grupy
+                    from studenci stud inner join zaliczenia zal on (stud.id_studenta = zal.id_studenta)
+                    inner join grupy gr on (zal.id_grupy = gr.id_grupy)
+                    where stud.id_studenta = 42
+                    )
+        and stud.id_studenta != 42;
+                   
+-wersja bez podzapytania
