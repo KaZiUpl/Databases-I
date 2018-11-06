@@ -11,16 +11,24 @@ where   prz.nazwa like 'Bazy danych';
 ZADANIE 2
 wyswietl imie, nazwisko i grupye ludzi, ktorzy studuiuja z Janem Kowalskim (id_studenta = 42):
 - wersja z podzapytaniem:
-select stud.imie, stud.nazwisko, gr.numer, gr.id_grupy
-from studenci stud inner join zaliczenia zal on (stud.id_studenta = zal.id_studenta)
-                    inner join grupy gr on (zal.id_grupy = gr.id_grupy)
-where gr.id_grupy in 
+SELECT stud.imie, stud.nazwisko, gr.numer, gr.id_grupy
+FROM studenci stud  JOIN zaliczenia zal ON (stud.id_studenta = zal.id_studenta)
+                    JOIN grupy gr ON (zal.id_grupy = gr.id_grupy)
+WHERE gr.id_grupy IN 
                     (
-                    select gr.id_grupy
-                    from studenci stud inner join zaliczenia zal on (stud.id_studenta = zal.id_studenta)
-                    inner join grupy gr on (zal.id_grupy = gr.id_grupy)
-                    where stud.id_studenta = 42
+                    SELECT gr.id_grupy
+                    FROM studenci stud  JOIN zaliczenia zal ON (stud.id_studenta = zal.id_studenta)
+                                        JOIN grupy gr ON (zal.id_grupy = gr.id_grupy)
+                    WHERE stud.imie = 'Jan' AND stud.nazwisko = 'Kowalski'
                     )
-        and stud.id_studenta != 42;
+        AND stud.id_studenta NOT LIKE 'Jan'
+        AND stud.nazwisko NOT LIKE  'Kowalski';
                    
--wersja bez podzapytania
+-wersja bez podzapytania:
+SELECT  stud.imie, stud.nazwisko, gr.numer, gr2.id_grupy
+FROM    studenci stud   JOIN zaliczenia zal ON (stud.id_studenta = zal.id_studenta)
+                        JOIN grupy gr ON (zal.id_grupy = gr.id_grupy),
+        studenci stud2  JOIN zaliczenia zal2 ON (stud2.id_studenta = zal2.id_studenta)
+                        JOIN grupy gr2 ON (zal2.id_grupy = gr2.id_grupy)
+WHERE   stud2.imie = 'Jan' AND stud2.nazwisko = 'Kowalski' AND 
+        NOT stud.imie = 'Jan' AND stud.nazwisko = 'Kowalski';
