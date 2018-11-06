@@ -36,7 +36,8 @@ CREATE TABLE przedmioty
     nazwa VARCHAR(255),
     typ_zaliczenia VARCHAR(50),
     wymiar_godzin INT,
-    id_kierunku INT
+    id_kierunku INT,
+	id_semestru INT
 );
 
 CREATE TABLE pracownicy
