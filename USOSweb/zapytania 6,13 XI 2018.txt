@@ -122,4 +122,33 @@ HAVING
                     studenci.id_studenta
             ) p
     );
+===========================
+-nie działa bo nie ma uprawnien, ale powinno
+CREATE VIEW srednia AS
+    ( SELECT
+        imie,
+        nazwisko,
+        round(AVG(zal.ocena), 3) AS srednia_ocen
+    FROM
+        studenci stud
+        JOIN zaliczenia zal ON stud.id_studenta = zal.id_studenta
+    GROUP BY
+        imie,
+        nazwisko,
+        stud.id_studenta
+    );
+
+SELECT
+    stud.id_studenta,
+    stud.imie,
+    stud.nazwisko
+FROM
+    srednia
+WHERE
+    srednia_ocen = (
+        SELECT
+            MAX(srednia_ocen)
+        FROM
+            srednia
+    );
 =============================== Zadanie 3 ===============================
