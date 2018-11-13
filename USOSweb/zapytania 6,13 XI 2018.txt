@@ -124,24 +124,29 @@ HAVING
     );
 ===========================
 -nie działa bo nie ma uprawnien, ale powinno
+DROP VIEW srednia;
+
 CREATE VIEW srednia AS
-    ( SELECT
+    SELECT
         imie,
         nazwisko,
         round(AVG(zal.ocena), 3) AS srednia_ocen
     FROM
         studenci stud
         JOIN zaliczenia zal ON stud.id_studenta = zal.id_studenta
+    WHERE
+        zal.ocena NOT IN (
+            0,
+            1
+        )
     GROUP BY
         imie,
         nazwisko,
-        stud.id_studenta
-    );
+        stud.id_studenta;
 
 SELECT
-    stud.id_studenta,
-    stud.imie,
-    stud.nazwisko
+    imie,
+    nazwisko
 FROM
     srednia
 WHERE
