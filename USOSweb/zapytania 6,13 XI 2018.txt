@@ -91,3 +91,35 @@ FROM
 WHERE 
     zaliczenia.ocena NOT IN (0,1);
 =============================== Zadanie 2 ===============================
+Wyświetl wszystkich studentów z najwyższą średnią:
+===========================
+SELECT
+    stud.id_studenta,
+    stud.imie,
+    stud.nazwisko,
+    round(AVG(zal.ocena), 3) AS "srednia"
+FROM
+    studenci stud
+    JOIN zaliczenia zal ON ( stud.id_studenta = zal.id_studenta )
+WHERE
+    zal.ocena NOT IN (0,1)
+GROUP BY
+    stud.id_studenta,
+    stud.imie,
+    stud.nazwisko
+HAVING
+    round(AVG(zal.ocena), 3) = (
+        SELECT
+            MAX(p.srednia)
+        FROM
+            (
+                SELECT
+                    round(AVG(zal.ocena), 3) AS srednia
+                FROM
+                    studenci
+                    JOIN zaliczenia zal ON ( studenci.id_studenta = zal.id_studenta )
+                GROUP BY
+                    studenci.id_studenta
+            ) p
+    );
+=============================== Zadanie 3 ===============================
