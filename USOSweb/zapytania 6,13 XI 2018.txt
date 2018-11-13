@@ -32,3 +32,5 @@ FROM    studenci stud   JOIN zaliczenia zal ON (stud.id_studenta = zal.id_studen
                         JOIN grupy gr2 ON (zal2.id_grupy = gr2.id_grupy)
 WHERE   stud2.imie = 'Jan' AND stud2.nazwisko = 'Kowalski' AND 
         NOT stud.imie = 'Jan' AND stud.nazwisko = 'Kowalski';
+
+------------------------------------------------------------------------------------------
