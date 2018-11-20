@@ -178,6 +178,9 @@ CREATE VIEW srednia AS
         stud.id_studenta;
 ===========================
 - stwórz widok zajęcia (id_stud,imie, nazwisko, nazwa_grupy, nazwa_przedmiotu)
+INSERT INTO "ZALICZENIA" (ID_ZALICZENIA, ID_STUDENTA, ID_GRUPY) VALUES ('232', '99', '13');
+INSERT INTO "ZALICZENIA" (ID_ZALICZENIA, ID_STUDENTA, ID_GRUPY) VALUES ('233', '98', '44');
+
 DROP VIEW zajecia;
 
 CREATE VIEW zajecia AS
