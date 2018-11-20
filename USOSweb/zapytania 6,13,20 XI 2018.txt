@@ -159,8 +159,11 @@ WHERE
 -----------------------------------------------------20.11.2018-----------------------------------------------------
 =============================== Zadanie 1 ===============================
 - stwórz widok średnia
+DROP VIEW srednia;
+
 CREATE VIEW srednia AS
-    SELECT
+    ( SELECT
+        stud.id_studenta,
         imie,
         nazwisko,
         round(AVG(zal.ocena), 3) AS srednia_ocen
@@ -175,7 +178,13 @@ CREATE VIEW srednia AS
     GROUP BY
         imie,
         nazwisko,
-        stud.id_studenta;
+        stud.id_studenta
+    );
+
+SELECT
+    *
+FROM
+    srednia;
 ===========================
 - stwórz widok zajęcia (id_stud,imie, nazwisko, nazwa_grupy, nazwa_przedmiotu)
 INSERT INTO "ZALICZENIA" (ID_ZALICZENIA, ID_STUDENTA, ID_GRUPY) VALUES ('232', '99', '13');
@@ -203,6 +212,31 @@ SELECT
     *
 FROM
     zajecia;
+===========================
+- stwórz widok z najlepszymi studentami
+DROP VIEW najlepsi_studenci;
+
+CREATE VIEW najlepsi_studenci AS
+    ( SELECT
+        id_studenta,
+        imie,
+        nazwisko,
+        srednia_ocen
+    FROM
+        srednia
+    WHERE
+        srednia_ocen = (
+            SELECT
+                MAX(srednia_ocen)
+            FROM
+                srednia
+        )
+    );
+
+SELECT
+    *
+FROM
+    najlepsi_studenci;
 =============================== Zadanie 2 ===============================
 ===========================
 
