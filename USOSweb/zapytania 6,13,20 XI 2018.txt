@@ -123,7 +123,7 @@ HAVING
             ) p
     );
 ===========================
--nie działa bo nie ma uprawnien, ale powinno
+-wersja z tworzeniem widoku
 DROP VIEW srednia;
 
 CREATE VIEW srednia AS
@@ -158,8 +158,48 @@ WHERE
     );
 -----------------------------------------------------20.11.2018-----------------------------------------------------
 =============================== Zadanie 1 ===============================
+- stwórz widok średnia
+CREATE VIEW srednia AS
+    SELECT
+        imie,
+        nazwisko,
+        round(AVG(zal.ocena), 3) AS srednia_ocen
+    FROM
+        studenci stud
+        JOIN zaliczenia zal ON stud.id_studenta = zal.id_studenta
+    WHERE
+        zal.ocena NOT IN (
+            0,
+            1
+        )
+    GROUP BY
+        imie,
+        nazwisko,
+        stud.id_studenta;
 ===========================
+- stwórz widok zajęcia (id_stud,imie, nazwisko, nazwa_grupy, nazwa_przedmiotu)
+DROP VIEW zajecia;
 
+CREATE VIEW zajecia AS
+    ( SELECT
+        stud.id_studenta,
+        stud.imie,
+        stud.nazwisko,
+        gr.numer,
+        prz.nazwa
+    FROM
+        studenci stud
+        JOIN zaliczenia zal ON ( stud.id_studenta = zal.id_studenta )
+        JOIN grupy gr ON ( zal.id_grupy = gr.id_grupy )
+        JOIN przedmioty prz ON ( gr.id_przedmiotu = prz.id_przedmiotu )
+    WHERE
+        zal.ocena IS NULL
+    );
+
+SELECT
+    *
+FROM
+    zajecia;
 =============================== Zadanie 2 ===============================
 ===========================
 
