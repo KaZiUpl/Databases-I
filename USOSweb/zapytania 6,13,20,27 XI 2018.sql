@@ -1,8 +1,8 @@
 
 -----------------------------------------------------6.11.2018-----------------------------------------------------
-=============================== Zadanie 1 ===============================
-imie, nazwisko, numer gupy ludzi będących na Bazach danych:
-===========================
+--=============================== Zadanie 1 ===============================
+--imie, nazwisko, numer gupy ludzi będących na Bazach danych:
+--===========================
 SELECT
     stud.imie,
     stud.nazwisko,
@@ -17,10 +17,10 @@ WHERE
 
 ------------------ imie studenta o id 42 na Jan
 
-=============================== Zadanie 2 ===============================
-wyswietl imie, nazwisko i grupye ludzi, ktorzy studuiuja z Janem Kowalskim (id_studenta = 42):
-===========================
-- wersja z podzapytaniem:
+--=============================== Zadanie 2 ===============================
+--wyswietl imie, nazwisko i grupye ludzi, ktorzy studuiuja z Janem Kowalskim (id_studenta = 42):
+--===========================
+-- wersja z podzapytaniem:
 SELECT
     stud.imie,
     stud.nazwisko,
@@ -44,8 +44,8 @@ WHERE
     )
     AND stud.id_studenta NOT LIKE 'Jan'
     AND stud.nazwisko NOT LIKE 'Kowalski';
-===========================                  
--wersja bez podzapytania:
+--===========================                  
+-- wersja bez podzapytania:
 SELECT
     stud.imie,
     stud.nazwisko,
@@ -64,10 +64,10 @@ WHERE
     AND stud.nazwisko = 'Kowalski';
 
 -----------------------------------------------------13.11.2018-----------------------------------------------------
-=============================== Zadanie 1 ===============================
-Średnia ocen studentów
-===========================
--każdego osobno
+--=============================== Zadanie 1 ===============================
+--Średnia ocen studentów
+--===========================
+--każdego osobno
 SELECT
     stud.id_studenta, 
     stud.imie, 
@@ -82,17 +82,17 @@ GROUP BY
     stud.imie,
     stud.nazwisko
 ORDER BY "Średnia ocen";
-===========================
--wszystkich
+--===========================
+--wszystkich
 SELECT 
     ROUND(AVG(zaliczenia.ocena),3) AS "Średnia ocen"
 FROM 
     zaliczenia
 WHERE 
     zaliczenia.ocena NOT IN (0,1);
-=============================== Zadanie 2 ===============================
-Wyświetl wszystkich studentów z najwyższą średnią:
-===========================
+--=============================== Zadanie 2 ===============================
+--Wyświetl wszystkich studentów z najwyższą średnią:
+--===========================
 SELECT
     stud.id_studenta,
     stud.imie,
@@ -122,8 +122,8 @@ HAVING
                     studenci.id_studenta
             ) p
     );
-===========================
--wersja z tworzeniem widoku
+--===========================
+--wersja z tworzeniem widoku
 DROP VIEW srednia;
 
 CREATE VIEW srednia AS
@@ -157,8 +157,8 @@ WHERE
             srednia
     );
 -----------------------------------------------------20.11.2018-----------------------------------------------------
-=============================== Zadanie 1 ===============================
-- stwórz widok średnia
+--=============================== Zadanie 1 ===============================
+-- stwórz widok średnia
 DROP VIEW srednia;
 
 CREATE VIEW srednia AS
@@ -185,8 +185,8 @@ SELECT
     *
 FROM
     srednia;
-===========================
-- stwórz widok zajęcia (id_stud,imie, nazwisko, nazwa_grupy, nazwa_przedmiotu)
+--===========================
+-- stwórz widok zajęcia (id_stud,imie, nazwisko, nazwa_grupy, nazwa_przedmiotu)
 INSERT INTO "ZALICZENIA" (ID_ZALICZENIA, ID_STUDENTA, ID_GRUPY) VALUES ('232', '99', '13');
 INSERT INTO "ZALICZENIA" (ID_ZALICZENIA, ID_STUDENTA, ID_GRUPY) VALUES ('233', '98', '44');
 
@@ -212,8 +212,8 @@ SELECT
     *
 FROM
     zajecia;
-===========================
-- stwórz widok z najlepszymi studentami
+--===========================
+-- stwórz widok z najlepszymi studentami
 DROP VIEW najlepsi_studenci;
 
 CREATE VIEW najlepsi_studenci AS
@@ -237,8 +237,8 @@ SELECT
     *
 FROM
     najlepsi_studenci;
-=============================== Zadanie 2 ===============================
-===========================
+--=============================== Zadanie 2 ===============================
+--===========================
 
-=============================== Zadanie 3 ===============================
+--=============================== Zadanie 3 ===============================
 ===========================
