@@ -33,12 +33,10 @@ BEGIN
             :old.ocena,
             :new.ocena
         );
-
     END IF;
 
     IF ( :new.ocena < 0 OR :new.ocena > 5 ) THEN
         dbms_output.put_line('Zla ocena');
         raise_application_error(-20000, 'Zla ocena (oczekiwana wartosc powinna znajdowac sie w przedziale 0-5)');
     END IF;
-
 END;
