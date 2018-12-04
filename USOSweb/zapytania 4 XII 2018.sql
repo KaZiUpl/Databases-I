@@ -1,4 +1,21 @@
 -----------------------------------------------------6.11.2018-----------------------------------------------------
 --=============================== Zadanie 1 ===============================
+--zrób trigger, który sprawdzi wprowadzana ocene i zatrzyma UPDATE jesli ocena jest nieprawidlowa
+CREATE OR REPLACE TRIGGER sprawdzanie_oceny BEFORE
+    UPDATE OF ocena ON zaliczenia
+    FOR EACH ROW
+BEGIN
+    IF ( :new.ocena >= 0 AND :new.ocena <= 5 ) THEN
+        dbms_output.put_line('stara ocena: ' || :old.ocena);
+        dbms_output.put_line('nowa ocena: ' || :new.ocena);
+    END IF;
 
+    IF ( :new.ocena < 0 OR :new.ocena > 5 ) THEN
+        dbms_output.put_line('Zla ocena');
+        raise_application_error(-20000, 'Zla ocena (oczekiwana wartosc powinna znajdowac sie w przedziale 0-5)');
+    END IF;
+END;
 --===========================
+
+--=============================== Zadanie 1 ===============================
+-- stworz tabele HISTORIA_ZMIAN_OCENY z kolumnami: user_name(jaki uzytkownik systemu to wpisal), id_zal, stara_ocena, nowa_ocena
