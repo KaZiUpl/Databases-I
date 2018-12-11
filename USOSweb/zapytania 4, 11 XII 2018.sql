@@ -44,15 +44,20 @@ END;
 --=============================== Zadanie 1 ===============================
 --stwórz tabelę sprzedawcy, w której umieścisz drzewo sprzedawców oraz tabelę sprzedaż, w kórej umieścisz rekordy o sprzedaży
 -- z datami z dwóch różnych miesięcy
+DROP TABLE sprzedawcy;
+
+DROP TABLE sprzedaz;
+
 CREATE TABLE sprzedawcy (
-    id_sprzedawcy   INT,
+    id_sprzedawcy   INT PRIMARY KEY,
     id_szefa        INT,
     imie            VARCHAR(50),
     nazwisko        VARCHAR(80)
 );
+
 CREATE TABLE sprzedaz (
-    id_sprzedazy   INT,
-    za_ile         INT,
+    id_sprzedazy   INT PRIMARY KEY,
+    za_ile         DOUBLE PRECISION,
     co             VARCHAR(60),
     data           DATE
 );
