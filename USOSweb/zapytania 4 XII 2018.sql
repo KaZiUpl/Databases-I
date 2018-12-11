@@ -23,7 +23,7 @@ CREATE OR REPLACE TRIGGER historia_oceny BEFORE
     UPDATE OF ocena ON zaliczenia
     FOR EACH ROW
 DECLARE
-    user_id   NUMBER;
+    user_id   varchar(80);
 BEGIN
     IF ( :new.ocena >= 0 AND :new.ocena <= 5 ) THEN
         user_id := user;
