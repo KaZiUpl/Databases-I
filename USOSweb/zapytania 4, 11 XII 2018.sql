@@ -91,3 +91,35 @@ INSERT INTO SPRZEDAZ VALUES ('14', 'Rubiny', '10', '4000', TO_DATE('2018-12-04 0
 INSERT INTO SPRZEDAZ VALUES ('15', 'Szafiry', '10', '3000', TO_DATE('2018-12-05 09:01:41', 'YYYY-MM-DD HH24:MI:SS'));
 --=============================== Zadanie 2 ===============================
 -- znajdz zespol Jana Kowalskiego 
+WITH zespol_kowalskiego (
+    id_sprzedawcy,
+    id_szefa,
+    imie,
+    nazwisko
+) AS (
+    SELECT
+        id_sprzedawcy,
+        id_szefa,
+        imie,
+        nazwisko
+    FROM
+        sprzedawcy
+    WHERE
+        id_sprzedawcy = 5
+    UNION ALL
+    SELECT
+        sprz.id_sprzedawcy,
+        sprz.id_szefa,
+        sprz.imie,
+        sprz.nazwisko
+    FROM
+        zespol_kowalskiego zespol
+        JOIN sprzedawcy sprz ON zespol.id_sprzedawcy = sprz.id_szefa
+)
+SELECT
+    id_sprzedawcy,
+    id_szefa,
+    imie,
+    nazwisko
+FROM
+    zespol_kowalskiego;
