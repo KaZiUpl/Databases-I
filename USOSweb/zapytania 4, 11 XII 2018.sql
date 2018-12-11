@@ -62,10 +62,10 @@ CREATE TABLE sprzedaz (
     data            DATE
 );
 
-INSERT INTO SPRZEDAWCY VALUES ('1', 'Jan', 'Kowalski')
-INSERT INTO SPRZEDAWCY VALUES ('2', '1', 'Aleksander', 'Kwadirow')
-INSERT INTO SPRZEDAWCY VALUES ('3', '1', 'Kazimierz', 'Jagiellonczyk')
-INSERT INTO SPRZEDAWCY VALUES ('4', '2', 'Marek', 'Spacerek')
+INSERT INTO SPRZEDAWCY VALUES ('1', 'Jan', 'Kowalski');
+INSERT INTO SPRZEDAWCY VALUES ('2', '1', 'Aleksander', 'Kwadirow');
+INSERT INTO SPRZEDAWCY VALUES ('3', '1', 'Kazimierz', 'Jagiellonczyk');
+INSERT INTO SPRZEDAWCY VALUES ('4', '2', 'Marek', 'Spacerek');
 INSERT INTO SPRZEDAWCY VALUES ('5', '2', 'Joanna', 'Maciuszek');
 INSERT INTO SPRZEDAWCY VALUES ('6', '3', 'Pawel', 'Perol');
 INSERT INTO SPRZEDAWCY VALUES ('7', '3', 'Kacper', 'Kral');
