@@ -123,3 +123,35 @@ SELECT
     nazwisko
 FROM
     zespol_kowalskiego;
+--=============================== Zadanie 3 ===============================
+-- sprzedaz laczna zespolu Kowalskiego
+WITH zespol_kowalskiego (
+    id_sprzedawcy,
+    id_szefa,
+    imie,
+    nazwisko
+) AS (
+    SELECT
+        id_sprzedawcy,
+        id_szefa,
+        imie,
+        nazwisko
+    FROM
+        sprzedawcy
+    WHERE
+        id_sprzedawcy = 1
+    UNION ALL
+    SELECT
+        sprz.id_sprzedawcy,
+        sprz.id_szefa,
+        sprz.imie,
+        sprz.nazwisko
+    FROM
+        zespol_kowalskiego zespol
+        JOIN sprzedawcy sprz ON zespol.id_sprzedawcy = sprz.id_szefa
+)
+SELECT
+    SUM(za_ile) AS sprzedaz_laczna
+FROM
+    zespol_kowalskiego
+    JOIN sprzedaz ON zespol_kowalskiego.id_sprzedawcy = sprzedaz.id_sprzedawcy;                                                                  
