@@ -105,7 +105,7 @@ WITH zespol_kowalskiego (
     FROM
         sprzedawcy
     WHERE
-        id_sprzedawcy = 5
+        id_sprzedawcy = 1
     UNION ALL
     SELECT
         sprz.id_sprzedawcy,
