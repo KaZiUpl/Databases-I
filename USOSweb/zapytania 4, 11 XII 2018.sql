@@ -124,7 +124,7 @@ SELECT
 FROM
     zespol_kowalskiego;
 --=============================== Zadanie 3 ===============================
--- sprzedaz laczna zespolu Kowalskiego
+-- sprzedaz laczna zespolu Kowalskiego z listopada
 WITH zespol_kowalskiego (
     id_sprzedawcy,
     id_szefa,
@@ -154,4 +154,6 @@ SELECT
     SUM(za_ile) AS sprzedaz_laczna
 FROM
     zespol_kowalskiego
-    JOIN sprzedaz ON zespol_kowalskiego.id_sprzedawcy = sprzedaz.id_sprzedawcy;                                                                  
+    JOIN sprzedaz ON zespol_kowalskiego.id_sprzedawcy = sprzedaz.id_sprzedawcy
+WHERE
+    EXTRACT(MONTH FROM sprzedaz.data) = 11;                                                                 
